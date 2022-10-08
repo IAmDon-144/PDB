@@ -90,7 +90,7 @@ class Fider(models.Model):
     longitude = models.FloatField(blank=False,default=0)
     status = models.CharField(max_length=15, choices=status)
     message = models.CharField(max_length=200, blank=True)
-    address = models.CharField(max_length=200, blank=True)
+    address = models.CharField(max_length=200, blank=True,editable=False)
 
     def save(self, *args, **kwargs):
         if self.address == "":
@@ -118,7 +118,7 @@ class Report(models.Model):
     priority = models.IntegerField(blank=False)
     latitude = models.FloatField(blank=False)
     longitude = models.FloatField(blank=False)
-    address = models.CharField(max_length=200, )
+    address = models.CharField(max_length=200,editable=False )
     contact = models.IntegerField()
     reporterName = models.CharField(max_length=200, default="")
     status = models.CharField(
