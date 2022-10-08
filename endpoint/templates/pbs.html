@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="container mt-2">
+    <h1>Api Endpoints</h1>
+    <br>
+  {% for endpoint in endpoints %}
+  <div class="card my-2">
+    <div class="card-body">
+      {{endpoint.name}}-&nbsp
+
+      <a href="{{endpoint.link}}"> http://127.0.0.1:8000/{{endpoint.link}}</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock content %}
